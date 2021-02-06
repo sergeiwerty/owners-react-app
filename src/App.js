@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { data } from './ownersData'
+import './App.css'
+import OwnersList from './components/OwnersList'
+import Sidebar from './components/Sidebar/Sidebar'
 
 function App() {
+  const [owners, setOwners] = useState(data)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <section className='container'>
+        <h2>Overview</h2>
+        <Sidebar />
+        <OwnersList owners={owners} />
+        <button onClick={() => setOwners(data)}>Ничего не произойдёт</button>
+      </section>
+    </main>
+  )
 }
 
-export default App;
+export default App
