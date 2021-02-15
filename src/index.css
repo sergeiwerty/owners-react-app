@@ -1,10 +1,19 @@
+:root {
+  --basic-background: #f3f3f3;
+  --odd-line-bacground: rgba(238, 242, 245, 0.4);
+
+  --ln-headings: #878787;
+  --green-color-content: #00ca39;
+  --red-color-content: #e44067;
+  --dark-text: #414141;
+  --white-text: #ffffff;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+  font-family: lato, sans-serif;
+  font-weight: 500;
 }
 
 code {
@@ -15,11 +24,18 @@ code {
 main {
   display: grid;
   grid-template-columns: 251px 1190px;
+  grid-template-rows: 946px;
 
   width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .container {
   grid-column-start: 2;
+  padding: 0 52px 0 75px;
+}
+
+.owner:nth-child(odd) {
+  background-color: var(--odd-line-bacground);
 }

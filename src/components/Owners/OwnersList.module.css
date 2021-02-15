@@ -1,0 +1,24 @@
+.owners_heading {
+  display: flex;
+  width: 1062px;
+  padding-right: 52px;
+  justify-content: space-between;
+}
+
+.owner_line,
+.lines_heading {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+}
+
+.lines_heading span {
+  color: var(--ln-headings);
+}
+
+.profits {
+  color: var(--green-color-content);
+}
+
+.losses {
+  color: var(--red-color-content);
+}
