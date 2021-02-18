@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './Overview.module.css'
-import { owners } from '../../../ownersData'
+// import { owners } from '../../../ownersData'
 
-const Overview = (owners) => {
+const Overview = ({ owners }) => {
   return (
     <>
-      {/* <div className={styles.owners_heading}>
+      <div className={styles.owners_heading}>
         <h2>Overview</h2>
         <div>
           <button>...</button>
@@ -35,7 +35,7 @@ const Overview = (owners) => {
             </article>
           </>
         )
-      })} */}
+      })}
     </>
   )
 }

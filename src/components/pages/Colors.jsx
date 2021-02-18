@@ -3,7 +3,7 @@ import React from 'react'
 const Colors = () => {
   return (
     <div>
-      <h2>Under construction</h2>
+      <h2>Colors page is under construction</h2>
     </div>
   )
 }

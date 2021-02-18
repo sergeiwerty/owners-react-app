@@ -3,7 +3,7 @@ import React from 'react'
 const AB_test = () => {
   return (
     <div>
-      <h2>Under construction</h2>
+      <h2>A/B test page is under construction</h2>
     </div>
   )
 }
