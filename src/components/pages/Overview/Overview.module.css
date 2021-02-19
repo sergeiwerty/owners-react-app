@@ -1,6 +1,7 @@
 .owners_heading {
   display: flex;
   width: 1062px;
+  height: 115px;
   padding-right: 52px;
   justify-content: space-between;
 }
@@ -21,4 +22,27 @@
 
 .losses {
   color: var(--red-color-content);
+}
+
+.add_form {
+  display: flex;
+  justify-content: space-evenly;
+  width: 72%;
+}
+
+.iputs_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 35%;
+}
+
+.iputs_wrapper label {
+  display: flex;
+  margin: 10px 5px;
+}
+
+input {
+  width: 65%;
+  margin-left: auto;
 }
