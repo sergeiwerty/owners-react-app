@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { owners } from './ownersData'
+import { data } from './ownersData'
 import './App.css'
 // pages
 import Overview from './components/pages/Overview/Overview'
@@ -17,6 +17,7 @@ import Error from './components/pages/Error'
 // sidebar
 import Sidebar from './components/Sidebar/Sidebar'
 function App() {
+  const [owners, setOwner] = useState(data)
   return (
     <Router>
       <main>
