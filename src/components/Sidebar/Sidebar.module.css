@@ -54,14 +54,7 @@ hr {
 
 .logout_item {
   margin: auto 0 47px 33px;
-  /* margin-top: auto;
-  margin-left: 33px; */
 }
-
-/* @media all and (max-width: 1200px) {
-  .main_menu {
-  }
-} */
 
 @media (max-width: 768px) {
   .logo_container {

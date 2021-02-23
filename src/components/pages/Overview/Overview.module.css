@@ -1,16 +1,30 @@
 .owners_heading {
-  /* display: flex;
-  width: 1062px;
-  height: 115px;
-  padding-right: 52px;
-  justify-content: space-between; */
   display: grid;
   grid-template-rows: repeat(6, auto);
   grid-template-columns: repeat(10, auto);
 }
 
 .button_wrapper {
-  margin-top: 10px;
+  grid-column: 10;
+  margin: 20px auto 0;
+}
+
+.form_buttons_wrapper {
+  padding: 8px 0;
+}
+
+.form_buttons_wrapper button {
+  display: block;
+  width: 100%;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
+.form_buttons_wrapper button:first-child {
+  color: #fff;
+  background-color: #10cd45;
+  border: none;
+  border-radius: 5px;
 }
 
 .add_btn,
@@ -24,10 +38,8 @@
 }
 
 .add_btn:focus {
-  /* outline: 2px solid #0b8f30; */
   outline: none;
-  box-shadow:
-    /* 0 0 0 3px #fff, */ 0 0 0 2px #0eb83e;
+  box-shadow: 0 0 0 2px #0eb83e;
 }
 
 .some_btn:focus {
@@ -64,16 +76,18 @@
 }
 
 .add_form {
-  display: flex;
-  justify-content: space-evenly;
-  width: 72%;
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: repeat(6, max-content);
+  grid-gap: 30px;
 }
 
-.iputs_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  width: 35%;
+.iputs_wrapper:first-child {
+  grid-column: span 1;
+}
+
+.iputs_wrapper:last-child {
+  grid-column: span 1;
 }
 
 .iputs_wrapper label {
@@ -81,13 +95,62 @@
   margin: 10px 5px;
 }
 
+label span {
+  margin-right: 1em;
+}
+
 input {
-  width: 65%;
+  padding-left: 1em;
   margin-left: auto;
 }
 
 @media (max-width: 768px) {
   .lines_heading {
     font-size: 1.7em;
+  }
+
+  .owners_heading {
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .add_form {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  .iputs_wrapper label {
+    padding: 1.2em 1.1em;
+  }
+
+  .iputs_wrapper span {
+    display: inline-block;
+    margin: auto 0;
+    font-size: 1.5em;
+  }
+
+  input {
+    width: 80%;
+    height: 2em;
+    border: 2px solid #9dadb9;
+    font-size: 1.5em;
+  }
+
+  .button_wrapper {
+    grid-column: 1;
+    margin: 0;
+  }
+
+  .form_buttons_wrapper button {
+    font-size: 2em;
+    padding: 0;
+  }
+
+  .add_btn,
+  .some_btn {
+    font-size: 1.5em;
+    width: 140px;
+    height: 72px;
   }
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NewOwners from './NewOwners'
 import styles from './Overview.module.css'
-// import { owners } from '../../../ownersData'
 
 const getLocalSrorage = () => {
   let listOfOwners = localStorage.getItem('listOfOwners')
@@ -15,7 +14,6 @@ const getLocalSrorage = () => {
 const Overview = ({ owners }) => {
   const [show, setShow] = useState(false)
   const [listOfOwners, setList] = useState(getLocalSrorage())
-  // const [show, setShow] = useState(false)
   const [fullName, setFullName] = useState('')
   const [endDate, setEndDate] = useState('')
   const [profits, setProfits] = useState(null)
@@ -37,6 +35,7 @@ const Overview = ({ owners }) => {
     setProfits('')
     setLosses('')
     setPhone('')
+    setShow(false)
   }
 
   useEffect(() => {
@@ -46,12 +45,11 @@ const Overview = ({ owners }) => {
     <>
       <div className={styles.owners_heading}>
         {!show && <h2>Overview</h2>}
-        {/* {show && <AddForm owners={owners} />} */}
         {show && (
           <form action='' className={styles.add_form} onSubmit={handleSubmit}>
             <div className={styles.iputs_wrapper}>
               <label htmlFor='fullName'>
-                Full name:
+                <span>Full name: </span>
                 <input
                   type='text'
                   id='fullName'
@@ -61,8 +59,9 @@ const Overview = ({ owners }) => {
                   onChange={(e) => setFullName(e.target.value)}
                 />
               </label>
+
               <label htmlFor='endDate'>
-                End date:
+                <span>End date: </span>
                 <input
                   type='text'
                   id='endDate'
@@ -76,7 +75,7 @@ const Overview = ({ owners }) => {
             </div>
             <div className={styles.iputs_wrapper}>
               <label htmlFor='profits'>
-                Profits:
+                <span>Profits: </span>
                 <input
                   type='text'
                   id='profits'
@@ -88,7 +87,7 @@ const Overview = ({ owners }) => {
               </label>
 
               <label htmlFor='losses'>
-                Losses:
+                <span>Losses: </span>
                 <input
                   type='text'
                   id='losses'
@@ -98,8 +97,9 @@ const Overview = ({ owners }) => {
                   required
                 />
               </label>
+
               <label htmlFor='phone'>
-                Phone:
+                <span>Phone: </span>
                 <input
                   type='text'
                   id='phone'
@@ -111,23 +111,31 @@ const Overview = ({ owners }) => {
                   pattern='^\+7{1,2}(\s|-|‒|)\d{3}(\s|-|‒|)\d{3}(\s|-|‒|)\d{2}(\s|-|‒|)\d{2}$'
                 />
               </label>
+            </div>
+            <div className={styles.form_buttons_wrapper}>
               <button type='submit'>Add owner</button>
+              <button type='button' onClick={() => setShow(!show)}>
+                Hide
+              </button>
             </div>
           </form>
         )}
-        <div className={styles.button_wrapper}>
-          <button
-            className={styles.some_btn}
-            type='submit'
-            title='functionality is not yet available'
-          >
-            ...
-          </button>
-          <button className={styles.add_btn} onClick={() => setShow(!show)}>
-            Add
-          </button>
-        </div>
+        {!show && (
+          <div className={styles.button_wrapper}>
+            <button
+              className={styles.some_btn}
+              type='submit'
+              title='functionality is not yet available'
+            >
+              ...
+            </button>
+            <button className={styles.add_btn} onClick={() => setShow(!show)}>
+              Add
+            </button>
+          </div>
+        )}
       </div>
+
       <p className={styles.lines_heading}>
         <span>Owner</span>
         <span>End date</span>
