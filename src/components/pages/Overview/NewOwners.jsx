@@ -12,8 +12,10 @@ const NewOwners = ({ newOwners }) => {
               <div className={styles.owner_line}>
                 <h3>{fullName}</h3>
                 <span>{endDate}</span>
-                <span className={styles.profits}>{`$${profits}`}</span>
-                <span className={styles.losses}>{`$${losses}`}</span>
+                <span className={styles.profits}>{`$${Math.abs(
+                  profits
+                )}`}</span>
+                <span className={styles.losses}>{`$${Math.abs(losses)}`}</span>
                 <span>{phone}</span>
               </div>
             </article>

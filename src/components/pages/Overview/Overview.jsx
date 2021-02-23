@@ -3,16 +3,24 @@ import NewOwners from './NewOwners'
 import styles from './Overview.module.css'
 // import { owners } from '../../../ownersData'
 
+const getLocalSrorage = () => {
+  let listOfOwners = localStorage.getItem('listOfOwners')
+  if (listOfOwners) {
+    return JSON.parse(localStorage.getItem('listOfOwners'))
+  } else {
+    return []
+  }
+}
+
 const Overview = ({ owners }) => {
   const [show, setShow] = useState(false)
-  const [listOfOwners, setList] = useState([])
+  const [listOfOwners, setList] = useState(getLocalSrorage())
   // const [show, setShow] = useState(false)
   const [fullName, setFullName] = useState('')
   const [endDate, setEndDate] = useState('')
   const [profits, setProfits] = useState(null)
   const [losses, setLosses] = useState(null)
   const [phone, setPhone] = useState('')
-  // const [list, setList] = useState([owners])
   const handleSubmit = (e) => {
     e.preventDefault()
     const newOwner = {
@@ -25,7 +33,15 @@ const Overview = ({ owners }) => {
     }
     setList([...listOfOwners, newOwner])
     setFullName('')
+    setEndDate('')
+    setProfits('')
+    setLosses('')
+    setPhone('')
   }
+
+  useEffect(() => {
+    localStorage.setItem('listOfOwners', JSON.stringify(listOfOwners))
+  }, [listOfOwners])
   return (
     <>
       <div className={styles.owners_heading}>
@@ -89,17 +105,25 @@ const Overview = ({ owners }) => {
                   id='phone'
                   name='phone'
                   value={phone}
+                  placeholder='+7 XXX XXX XX XX'
                   onChange={(e) => setPhone(e.target.value)}
                   required
+                  pattern='^\+7{1,2}(\s|-|‒|)\d{3}(\s|-|‒|)\d{3}(\s|-|‒|)\d{2}(\s|-|‒|)\d{2}$'
                 />
               </label>
               <button type='submit'>Add owner</button>
             </div>
           </form>
         )}
-        <div>
-          <button>...</button>
-          <button className='add_btn' onClick={() => setShow(!show)}>
+        <div className={styles.button_wrapper}>
+          <button
+            className={styles.some_btn}
+            type='submit'
+            title='functionality is not yet available'
+          >
+            ...
+          </button>
+          <button className={styles.add_btn} onClick={() => setShow(!show)}>
             Add
           </button>
         </div>
@@ -116,92 +140,6 @@ const Overview = ({ owners }) => {
     </>
   )
 }
-
-// function AddForm() {
-//   const [fullName, setFullName] = useState('')
-//   // const [endDate, setEndDate] = useState('')
-//   // const [profits, setProfits] = useState('')
-//   // const [losses, setLosses] = useState('')
-//   // const [phone, setPhone] = useState('')
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault()
-//     const newOwner = {
-//       id: new Date().getTime().toString(),
-//       name: fullName,
-//       // endDate,
-//       // profits,
-//       // losses,
-//       // phone,
-//     }
-//     setList([...list, newOwner])
-//   }
-//   return (
-//     <form action='' className={styles.add_form} onSubmit={handleSubmit}>
-//       <div className={styles.iputs_wrapper}>
-//         <label htmlFor='fullName'>
-//           Full name:
-//           <input
-//             type='text'
-//             id='fullName'
-//             name='fullName'
-//             value={fullName}
-//             onChange={(e) => setFullName(e.target.value)}
-//           />
-//         </label>
-
-//         <label htmlFor='endDate'>
-//           End date:
-//           <input
-//             type='text'
-//             id='endDate'
-//             name='endDate'
-//             value={endDate}
-//             onChange={(e) => setFullName(e.target.value)}
-//             required
-//           />
-//         </label>
-//       </div>
-//       <div className={styles.iputs_wrapper}>
-//         <label htmlFor='profits'>
-//           Profits:
-//           <input
-//             type='text'
-//             id='profits'
-//             name='profits'
-//             value={profits}
-//             onChange={(e) => setProfits(e.target.value)}
-//             required
-//           />
-//         </label>
-
-//         <label htmlFor='losses'>
-//           Losses:
-//           <input
-//             type='text'
-//             id='losses'
-//             name='losses'
-//             value={losses}
-//             onChange={(e) => setLosses(e.target.value)}
-//             required
-//           />
-//         </label>
-//         <label htmlFor='phone'>
-//           Phone:
-//           <input
-//             type='text'
-//             id='phone'
-//             name='phone'
-//             value={phone}
-//             onChange={(e) => setPhone(e.target.value)}
-//             required
-//           />
-//         </label>
-//         <button type='submit'>Add owner</button>
-//       </div>
-//     </form>
-//   )
-// }
 
 const List = ({ owners }) => {
   return (
