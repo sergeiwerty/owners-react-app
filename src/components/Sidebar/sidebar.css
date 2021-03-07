@@ -1,7 +1,7 @@
 .main_menu {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  grid-column-start: 1;
+  grid-column-start: 1; */
   background: linear-gradient(175.93deg, #5f00d8 -10.23%, #b200f1 117.03%);
 }
 

@@ -1,22 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Sidebar.module.css'
+// import styles from './Sidebar.module.css'
+import './sidebar.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from './logo.svg'
 
 const Sidebar = () => {
   return (
-    <aside className={styles.main_menu}>
-      <div className={styles.aside_top}>
-        <div className={styles.logo_container}>
+    <aside className='col-12, col-sm-12, main_menu'>
+      <div className='aside_top'>
+        <div className='logo_container'>
           <a href='index'>
             <img src={logo} alt='logo' />
           </a>
           <hr></hr>
         </div>
-        <ul className={styles.items_list}>
+        <ul className='items_list'>
           <li>
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='22'
                   height='25'
@@ -35,7 +37,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to='/cloud' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='25'
                   height='21'
@@ -54,7 +56,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to='/sketch' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='24'
                   height='22'
@@ -73,7 +75,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to='/experiments' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='24'
                   height='25'
@@ -92,7 +94,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to='/security' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='24'
                   height='25'
@@ -111,7 +113,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to='/ownership' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='25'
                   height='25'
@@ -130,7 +132,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to='/ab_test' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='25'
                   height='25'
@@ -149,7 +151,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to='/colors' style={{ textDecoration: 'none' }}>
-              <a href='ss' className={styles.list_item}>
+              <a href='ss' className='list_item'>
                 <svg
                   width='25'
                   height='25'
@@ -169,7 +171,7 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      <a href='ss' className={styles.logout_item}>
+      <a href='ss' className='logout_item'>
         <svg
           width='23'
           height='24'

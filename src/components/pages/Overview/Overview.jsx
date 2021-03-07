@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { Modal } from '../../ModalForm'
 import NewOwners from './NewOwners'
 import styles from './Overview.module.css'
+//
+import { useGlobalContext } from '../../context'
 
-const getLocalSrorage = () => {
+const getLocalStorage = () => {
   let listOfOwners = localStorage.getItem('listOfOwners')
   if (listOfOwners) {
     return JSON.parse(localStorage.getItem('listOfOwners'))
@@ -12,13 +15,26 @@ const getLocalSrorage = () => {
 }
 
 const Overview = ({ owners }) => {
-  const [show, setShow] = useState(false)
-  const [listOfOwners, setList] = useState(getLocalSrorage())
-  const [fullName, setFullName] = useState('')
-  const [endDate, setEndDate] = useState('')
-  const [profits, setProfits] = useState(null)
-  const [losses, setLosses] = useState(null)
-  const [phone, setPhone] = useState('')
+  // временное:
+  const {
+    openModal,
+    fullName,
+    endDate,
+    profits,
+    losses,
+    phone,
+  } = useGlobalContext()
+  //перенести
+  const [modalShow, setModalShow] = useState(false)
+  //
+  const [listOfOwners, setList] = useState(getLocalStorage())
+  // перенести
+  // const [fullName, setFullName] = useState('')
+  // const [endDate, setEndDate] = useState('')
+  // const [profits, setProfits] = useState(null)
+  // const [losses, setLosses] = useState(null)
+  // const [phone, setPhone] = useState('')
+  //
   const handleSubmit = (e) => {
     e.preventDefault()
     const newOwner = {
@@ -29,13 +45,13 @@ const Overview = ({ owners }) => {
       losses,
       phone,
     }
-    setList([...listOfOwners, newOwner])
-    setFullName('')
-    setEndDate('')
-    setProfits('')
-    setLosses('')
-    setPhone('')
-    setShow(false)
+    // setList([...listOfOwners, newOwner])
+    // setFullName('')
+    // setEndDate('')
+    // setProfits('')
+    // setLosses('')
+    // setPhone('')
+    // setModalShow(false)
   }
 
   useEffect(() => {
@@ -44,8 +60,8 @@ const Overview = ({ owners }) => {
   return (
     <>
       <div className={styles.owners_heading}>
-        {!show && <h2>Overview</h2>}
-        {show && (
+        {/* {!modalShow && <h2>Overview</h2>}
+        {modalShow && (
           <form action='' className={styles.add_form} onSubmit={handleSubmit}>
             <div className={styles.iputs_wrapper}>
               <label htmlFor='fullName'>
@@ -114,13 +130,13 @@ const Overview = ({ owners }) => {
             </div>
             <div className={styles.form_buttons_wrapper}>
               <button type='submit'>Add owner</button>
-              <button type='button' onClick={() => setShow(!show)}>
+              <button type='button' onClick={() => setModalShow(!modalShow)}>
                 Hide
               </button>
             </div>
           </form>
-        )}
-        {!show && (
+        )} */}
+        {!modalShow && (
           <div className={styles.button_wrapper}>
             <button
               className={styles.some_btn}
@@ -129,7 +145,11 @@ const Overview = ({ owners }) => {
             >
               ...
             </button>
-            <button className={styles.add_btn} onClick={() => setShow(!show)}>
+            <button
+              className={styles.add_btn}
+              // onClick={() => setModalShow(!modalShow)}
+              onClick={openModal}
+            >
               Add
             </button>
           </div>
@@ -145,6 +165,8 @@ const Overview = ({ owners }) => {
       </p>
       <List owners={owners} />
       <NewOwners newOwners={listOfOwners} />
+      {/* <OwnersForm show={modalShow} /> */}
+      <Modal />
     </>
   )
 }
