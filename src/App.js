@@ -30,7 +30,7 @@ function App() {
           <Sidebar />
           <section className='navigation, col-12, col-sm-8, col-lg-9'>
             <Switch>
-              <Route exact path='/'>
+              <Route exact path={['/', '/owners-react-app']}>
                 <Overview owners={owners} />
               </Route>
               <Route path='/cloud'>
