@@ -1,11 +1,13 @@
 .close_btn {
-  border: none;
+  width: auto;
   margin: 0;
   padding: 0;
-  width: auto;
-  overflow: visible;
-
-  background: transparent;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: -48px;
+  right: -48px;
+  background: #fff;
 }
 
 .modal-overlay {
@@ -25,9 +27,10 @@
 .modal-container {
   background: #fff;
   border-radius: 0.25rem;
-  width: 90vw;
+  width: 45vw;
   height: 75vh;
   max-width: 620px;
+  padding: 2rem;
   text-align: center;
   display: grid;
   place-items: center;

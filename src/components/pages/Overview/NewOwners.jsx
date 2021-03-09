@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from './Overview.module.css'
 
-const NewOwners = ({ newOwners }) => {
+import { useGlobalContext } from '../../context'
+
+const NewOwners = () => {
+  const { listOfOwners } = useGlobalContext()
+  console.log(listOfOwners)
   return (
     <>
-      {newOwners.map((newOwner) => {
+      {listOfOwners.map((newOwner) => {
         const { id, fullName, endDate, profits, losses, phone } = newOwner
         return (
           <>

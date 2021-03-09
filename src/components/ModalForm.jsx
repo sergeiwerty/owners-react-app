@@ -3,43 +3,30 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
-import InputGroup from 'react-bootstrap/InputGroup'
+// import InputGroup from 'react-bootstrap/InputGroup'
 //
 import './modalForm.css'
 import close_btn from './pages/Overview/images/close_btn.png'
 //
 import { useGlobalContext } from './context'
 
-// export const ModalForm = (props) => {
-//   return (
-//     <Modal
-//       {...props}
-//       size='lg'
-//       aria-labelledby='contained-modal-title-vcenter'
-//       centered
-//     >
-//       <Modal.Header closeButton>
-//         <Modal.Title id='contained-modal-title-vcenter'>
-//           Modal heading
-//         </Modal.Title>
-//       </Modal.Header>
-//       <Modal.Body>
-//         <h4>Centered Modal</h4>
-//         <p>
-//           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-//           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-//           consectetur ac, vestibulum at eros.
-//         </p>
-//       </Modal.Body>
-//       <Modal.Footer>
-//         <Button onClick={props.onHide}>Close</Button>
-//       </Modal.Footer>
-//     </Modal>
-//   )
-// }
-
 export const Modal = () => {
-  const { isModalOpen, closeModal, addFullName } = useGlobalContext()
+  const {
+    isModalOpen,
+    closeModal,
+    fullName,
+    addFullName,
+    addOwner,
+    addEndDate,
+    endDate,
+    profits,
+    losses,
+    phone,
+    addProfits,
+    addLosses,
+    addPhone,
+  } = useGlobalContext()
+
   const [validated, setValidated] = useState(false)
 
   const handleSubmit = (event) => {
@@ -50,6 +37,24 @@ export const Modal = () => {
     }
 
     setValidated(true)
+
+    const newOwner = {
+      id: new Date().getTime().toString(),
+      fullName,
+      endDate,
+      profits,
+      losses,
+      phone,
+    }
+
+    addOwner(newOwner)
+
+    // setFullName('')
+    // // setEndDate('')
+    // // setProfits('')
+    // // setLosses('')
+    // // setPhone('')
+    // // setModalShow(false)
   }
 
   return (
@@ -63,86 +68,78 @@ export const Modal = () => {
           <img src={close_btn} alt='close button' />
         </button>
 
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form
+          noValidate
+          validated={validated}
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <Form.Row>
-            <Form.Group as={Col} md='4' controlId='validationCustom01'>
-              <Form.Label>First name</Form.Label>
-              {/* <Form.Control
-                required
-                type='text'
-                placeholder='First name'
-                defaultValue='Mark'
-              /> */}
+            <Form.Group as={Col} md='6' controlId='validationCustom01'>
+              <Form.Label>Full name</Form.Label>
               <Form.Control
                 required
                 type='text'
-                id='fullName'
                 name='fullName'
-                // value={fullName}
                 placeholder='Name Surname'
-                // onChange={(e) => setFullName(e.target.value)}
                 onChange={(e) => addFullName(e)}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md='4' controlId='validationCustom02'>
-              <Form.Label>Last name</Form.Label>
+            <Form.Group as={Col} md='6' controlId='validationCustom02'>
+              <Form.Label>End date</Form.Label>
               <Form.Control
                 required
                 type='text'
-                placeholder='Last name'
-                defaultValue='Otto'
+                name='endDate'
+                placeholder='dd/mm/yy'
+                onChange={(e) => addEndDate(e)}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md='4' controlId='validationCustomUsername'>
-              <Form.Label>Username</Form.Label>
-              <InputGroup hasValidation>
-                <InputGroup.Prepend>
-                  <InputGroup.Text id='inputGroupPrepend'>@</InputGroup.Text>
-                </InputGroup.Prepend>
-                <Form.Control
-                  type='text'
-                  placeholder='Username'
-                  aria-describedby='inputGroupPrepend'
-                  required
-                />
-                <Form.Control.Feedback type='invalid'>
-                  Please choose a username.
-                </Form.Control.Feedback>
-              </InputGroup>
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md='6' controlId='validationCustom03'>
-              <Form.Label>City</Form.Label>
-              <Form.Control type='text' placeholder='City' required />
+              <Form.Label>Profits</Form.Label>
+              <Form.Control
+                required
+                type='text'
+                name='profits'
+                placeholder='999.00'
+                onChange={(e) => addProfits(e)}
+              />
               <Form.Control.Feedback type='invalid'>
-                Please provide a valid city.
+                Please provide a valid profits sum.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md='3' controlId='validationCustom04'>
-              <Form.Label>State</Form.Label>
-              <Form.Control type='text' placeholder='State' required />
+            <Form.Group as={Col} md='6' controlId='validationCustom04'>
+              <Form.Label>Losses</Form.Label>
+              <Form.Control
+                required
+                type='text'
+                name='losses'
+                placeholder='999.00'
+                onChange={(e) => addLosses(e)}
+              />
               <Form.Control.Feedback type='invalid'>
-                Please provide a valid state.
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md='3' controlId='validationCustom05'>
-              <Form.Label>Zip</Form.Label>
-              <Form.Control type='text' placeholder='Zip' required />
-              <Form.Control.Feedback type='invalid'>
-                Please provide a valid zip.
+                Please provide a valid losses sum.
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-          <Form.Group>
-            <Form.Check
-              required
-              label='Agree to terms and conditions'
-              feedback='You must agree before submitting.'
-            />
-          </Form.Group>
+          <Form.Row>
+            <Form.Group as={Col} md='6' controlId='validationCustom05'>
+              <Form.Label>Phone</Form.Label>
+              <Form.Control
+                required
+                type='text'
+                name='phone'
+                placeholder='+7 xxx xxx xx xx'
+                onChange={(e) => addPhone(e)}
+              />
+              <Form.Control.Feedback type='invalid'>
+                Please provide phone number.
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Form.Row>
           <Button type='submit'>Submit form</Button>
         </Form>
       </div>

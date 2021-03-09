@@ -26,7 +26,7 @@ function App() {
   return (
     <Layout>
       <Router>
-        <main className='row'>
+        <main className='row main-container'>
           <Sidebar />
           <section className='navigation, col-12, col-sm-8, col-lg-9'>
             <Switch>
