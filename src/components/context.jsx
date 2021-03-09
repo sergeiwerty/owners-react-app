@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { data } from '../ownersData'
 
 const OwnersContext = React.createContext()
 
@@ -18,6 +19,9 @@ const AppProvider = ({ children }) => {
   const [profits, setProfits] = useState(null)
   const [losses, setLosses] = useState(null)
   const [phone, setPhone] = useState('')
+  //
+  const [page, setPage] = useState(0)
+  // const [owners, setOwners] = useState([])
 
   const [listOfOwners, setList] = useState(getLocalStorage())
 
@@ -52,6 +56,11 @@ const AppProvider = ({ children }) => {
   const addOwner = (newOwner) => {
     setList([...listOfOwners, newOwner])
   }
+  //
+
+  const handlePage = (index) => {
+    setPage(index)
+  }
 
   // const handleSubmit = (e) => {
   //   e.preventDefault()
@@ -75,6 +84,7 @@ const AppProvider = ({ children }) => {
   return (
     <OwnersContext.Provider
       value={{
+        data,
         isModalOpen,
         openModal,
         closeModal,
@@ -90,6 +100,9 @@ const AppProvider = ({ children }) => {
         addProfits,
         addLosses,
         addPhone,
+        // below for owners page
+        page,
+        handlePage,
         // handleSubmit,
       }}
     >

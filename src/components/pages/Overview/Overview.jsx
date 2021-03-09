@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Modal } from '../../ModalForm'
 import NewOwners from './NewOwners'
+import { paginate } from './utils'
 import styles from './Overview.module.css'
 //
 import { useGlobalContext } from '../../context'
@@ -62,9 +63,18 @@ const Overview = ({ owners }) => {
 }
 
 const List = ({ owners }) => {
+  const { page, handlePage } = useGlobalContext()
+  // перенёс в contex
+  // const [page, setPage] = useState(0)
+  // const [owners, setOwners] = useState([])
+
+  // useEffect(() => {
+  //   setOwners(paginate(owners)[page])
+  // }, [])
+
   return (
     <>
-      {owners.map((owner) => {
+      {paginate(owners)[page].map((owner) => {
         const { id, name, endDate, profits, losses, phone } = owner
         return (
           <>
@@ -80,6 +90,47 @@ const List = ({ owners }) => {
           </>
         )
       })}
+      <Pagination owners={owners} />
+    </>
+  )
+}
+
+const Pagination = ({ owners }) => {
+  const { page, handlePage } = useGlobalContext()
+
+  const nextPage = () => {
+    handlePage((oldPage) => {
+      let nextPage = oldPage + 1
+      if (nextPage > paginate(owners).length - 1) {
+        nextPage = 0
+      }
+      return nextPage
+    })
+  }
+
+  const prevPage = () => {
+    handlePage((oldPage) => {
+      let prevPage = oldPage - 1
+      if (prevPage < 0) {
+        prevPage = paginate(owners) - 1
+      }
+      return prevPage
+    })
+  }
+
+  return (
+    <>
+      <div>
+        <button className='prev-btn' onClick={prevPage}></button>
+        {paginate(owners).map((item, index) => {
+          return (
+            <button key={index} onClick={() => handlePage(index)}>
+              {index + 1}
+            </button>
+          )
+        })}
+        <button className='next-btn' onClick={nextPage}></button>
+      </div>
     </>
   )
 }
