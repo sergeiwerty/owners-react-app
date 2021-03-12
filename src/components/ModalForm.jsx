@@ -14,17 +14,25 @@ export const Modal = () => {
   const {
     isModalOpen,
     closeModal,
-    fullName,
-    addFullName,
+    //
+    owner,
+    handleChange,
+    //
+
+    // fullName,
+    // addFullName,
     addOwner,
-    addEndDate,
-    endDate,
-    profits,
-    losses,
-    phone,
-    addProfits,
-    addLosses,
-    addPhone,
+    // addEndDate,
+    // endDate,
+    // profits,
+    // losses,
+    // phone,
+    // addProfits,
+    // addLosses,
+    // addPhone,
+    //
+    switchTrigger,
+    handlePageAfterAdd,
   } = useGlobalContext()
 
   const [validated, setValidated] = useState(false)
@@ -38,16 +46,18 @@ export const Modal = () => {
 
     setValidated(true)
 
-    const newOwner = {
-      id: new Date().getTime().toString(),
-      fullName,
-      endDate,
-      profits,
-      losses,
-      phone,
-    }
+    // рефакторинг для манипулирования несколькими инпутами
+    // const newOwner = {
+    //   id: new Date().getTime().toString(),
+    //   fullName,
+    //   endDate,
+    //   profits,
+    //   losses,
+    //   phone,
+    // }
 
-    addOwner(newOwner)
+    addOwner(owner)
+    //
 
     // setFullName('')
     // // setEndDate('')
@@ -56,6 +66,9 @@ export const Modal = () => {
     // // setPhone('')
     // // setModalShow(false)
   }
+
+  switchTrigger()
+  handlePageAfterAdd()
 
   return (
     <div
@@ -80,8 +93,10 @@ export const Modal = () => {
                 required
                 type='text'
                 name='fullName'
+                value={owner.fullName}
                 placeholder='Name Surname'
-                onChange={(e) => addFullName(e)}
+                // onChange={(e) => addFullName(e)}
+                onChange={(e) => handleChange(e)}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -91,8 +106,10 @@ export const Modal = () => {
                 required
                 type='text'
                 name='endDate'
+                value={owner.endDate}
                 placeholder='dd/mm/yy'
-                onChange={(e) => addEndDate(e)}
+                // onChange={(e) => addEndDate(e)}
+                onChange={(e) => handleChange(e)}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -104,8 +121,10 @@ export const Modal = () => {
                 required
                 type='text'
                 name='profits'
+                value={owner.profits}
                 placeholder='999.00'
-                onChange={(e) => addProfits(e)}
+                // onChange={(e) => addProfits(e)}
+                onChange={(e) => handleChange(e)}
               />
               <Form.Control.Feedback type='invalid'>
                 Please provide a valid profits sum.
@@ -117,8 +136,10 @@ export const Modal = () => {
                 required
                 type='text'
                 name='losses'
+                value={owner.losses}
                 placeholder='999.00'
-                onChange={(e) => addLosses(e)}
+                // onChange={(e) => addLosses(e)}
+                onChange={(e) => handleChange(e)}
               />
               <Form.Control.Feedback type='invalid'>
                 Please provide a valid losses sum.
@@ -132,8 +153,10 @@ export const Modal = () => {
                 required
                 type='text'
                 name='phone'
+                value={owner.phone}
                 placeholder='+7 xxx xxx xx xx'
-                onChange={(e) => addPhone(e)}
+                // onChange={(e) => addPhone(e)}
+                onChange={(e) => handleChange(e)}
               />
               <Form.Control.Feedback type='invalid'>
                 Please provide phone number.

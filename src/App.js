@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { data } from './ownersData'
+// import { owners } from './ownersData'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -22,7 +22,7 @@ import Error from './components/pages/Error'
 // sidebar
 import Sidebar from './components/Sidebar/Sidebar'
 function App() {
-  const [owners, setOwner] = useState(data)
+  // const [owners, setOwner] = useState(data)
   return (
     <Layout>
       <Router>
@@ -31,7 +31,7 @@ function App() {
           <section className='navigation, col-12, col-sm-8, col-lg-9'>
             <Switch>
               <Route exact path={['/', '/owners-react-app']}>
-                <Overview owners={owners} />
+                <Overview />
               </Route>
               <Route path='/cloud'>
                 <Cloud />

@@ -1,0 +1,54 @@
+.pagination-container {
+  display: flex;
+}
+
+.page-num {
+  box-sizing: border-box;
+  width: 35.5px;
+  height: 35.5px;
+  color: #414141;
+  background: #eef2f5 !important;
+  border: none;
+  border-radius: 5px !important;
+}
+
+.page-num:not(:nth-child(2)):not(:nth-last-child(2)) {
+  display: none;
+}
+
+.page-num:nth-child(2) {
+  position: relative;
+  margin-right: 51px;
+}
+
+.page-num:nth-child(2)::after {
+  position: absolute;
+  content: 'of';
+  width: 51px;
+  height: 35.5px;
+  padding-top: 15%;
+  top: 0%;
+  left: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.prev-btn,
+.next-btn {
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: #fff;
+}
+
+.prev-btn img {
+  padding-left: 0;
+  text-align: left;
+}
+
+.next-btn img {
+  padding-right: 0;
+  text-align: right;
+  transform: rotate(180deg);
+}

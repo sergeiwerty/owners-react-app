@@ -3,6 +3,8 @@ import { Modal } from '../../ModalForm'
 import NewOwners from './NewOwners'
 import { paginate } from './utils'
 import styles from './Overview.module.css'
+import './overview.css'
+import arrow_btn from './images/arrow_btn.svg'
 //
 import { useGlobalContext } from '../../context'
 
@@ -15,13 +17,14 @@ import { useGlobalContext } from '../../context'
 //   }
 // }
 
-const Overview = ({ owners }) => {
-  const { openModal, listOfOwners } = useGlobalContext()
+const Overview = () => {
+  const { openModal, listOfOwners, allOwners, mergeOwners } = useGlobalContext()
 
   //перенести
   const [modalShow, setModalShow] = useState(false)
 
   useEffect(() => {
+    mergeOwners(allOwners, listOfOwners)
     localStorage.setItem('listOfOwners', JSON.stringify(listOfOwners))
   }, [listOfOwners])
   return (
@@ -54,16 +57,23 @@ const Overview = ({ owners }) => {
         <span>Losses</span>
         <span>Phone</span>
       </p>
-      <List owners={owners} />
-      <NewOwners />
+      <List />
+      {/* <NewOwners /> */}
       {/* <OwnersForm show={modalShow} /> */}
       <Modal />
     </>
   )
 }
 
-const List = ({ owners }) => {
-  const { page, handlePage } = useGlobalContext()
+const List = () => {
+  const {
+    page,
+    handlePage,
+    owners,
+    allOwners,
+    ownersTrigger,
+  } = useGlobalContext()
+
   // перенёс в contex
   // const [page, setPage] = useState(0)
   // const [owners, setOwners] = useState([])
@@ -74,13 +84,13 @@ const List = ({ owners }) => {
 
   return (
     <>
-      {paginate(owners)[page].map((owner) => {
-        const { id, name, endDate, profits, losses, phone } = owner
+      {paginate(ownersTrigger ? allOwners : owners)[page].map((owner) => {
+        const { id, fullName, endDate, profits, losses, phone } = owner
         return (
           <>
             <article key={id} className='owner'>
               <div className={styles.owner_line}>
-                <h3>{name}</h3>
+                <h3>{fullName}</h3>
                 <span>{endDate}</span>
                 <span className={styles.profits}>{profits}</span>
                 <span className={styles.losses}>{losses}</span>
@@ -90,18 +100,18 @@ const List = ({ owners }) => {
           </>
         )
       })}
-      <Pagination owners={owners} />
+      <Pagination />
     </>
   )
 }
 
-const Pagination = ({ owners }) => {
-  const { page, handlePage } = useGlobalContext()
+const Pagination = () => {
+  const { currentPage, page, handlePage, allOwners } = useGlobalContext()
 
   const nextPage = () => {
     handlePage((oldPage) => {
       let nextPage = oldPage + 1
-      if (nextPage > paginate(owners).length - 1) {
+      if (nextPage > paginate(allOwners).length - 1) {
         nextPage = 0
       }
       return nextPage
@@ -112,7 +122,7 @@ const Pagination = ({ owners }) => {
     handlePage((oldPage) => {
       let prevPage = oldPage - 1
       if (prevPage < 0) {
-        prevPage = paginate(owners) - 1
+        prevPage = paginate(allOwners).length - 1
       }
       return prevPage
     })
@@ -120,16 +130,39 @@ const Pagination = ({ owners }) => {
 
   return (
     <>
-      <div>
-        <button className='prev-btn' onClick={prevPage}></button>
-        {paginate(owners).map((item, index) => {
-          return (
-            <button key={index} onClick={() => handlePage(index)}>
-              {index + 1}
-            </button>
-          )
+      <div className='pagination-container'>
+        <button className='prev-btn' onClick={prevPage}>
+          <img src={arrow_btn} alt='previous-btn' />
+          {handlePage}
+        </button>
+        {paginate(allOwners).map((item, index) => {
+          // console.log(index)
+          if (index === 0) {
+            // console.log('bang!')
+            return (
+              <button
+                key={index}
+                onClick={() => handlePage(index)}
+                className='page-num'
+              >
+                {page + 1}
+              </button>
+            )
+          } else {
+            return (
+              <button
+                key={index}
+                onClick={() => handlePage(index)}
+                className='page-num'
+              >
+                {index + 1}
+              </button>
+            )
+          }
         })}
-        <button className='next-btn' onClick={nextPage}></button>
+        <button className='next-btn' onClick={nextPage}>
+          <img src={arrow_btn} alt='next-btn' />
+        </button>
       </div>
     </>
   )

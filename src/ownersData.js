@@ -1,7 +1,7 @@
-export const data = [
+export const owners = [
   {
     id: 1,
-    name: 'Savannah Nguyen',
+    fullName: 'Savannah Nguyen',
     endDate: '1/15/12',
     profits: '$328.85',
     losses: '$779.58',
@@ -9,7 +9,7 @@ export const data = [
   },
   {
     id: 2,
-    name: 'Jenny Wilson',
+    fullName: 'Jenny Wilson',
     endDate: '8/30/14',
     profits: '$948.55',
     losses: '$589.99',
@@ -17,7 +17,7 @@ export const data = [
   },
   {
     id: 3,
-    name: 'Annette Black',
+    fullName: 'Annette Black',
     endDate: '5/30/14',
     profits: '$778.35',
     losses: '$948.55',
@@ -25,7 +25,7 @@ export const data = [
   },
   {
     id: 4,
-    name: 'Kathryn Murphy',
+    fullName: 'Kathryn Murphy',
     endDate: '11/7/16',
     profits: '$169.43',
     losses: '$202.87',
@@ -33,7 +33,7 @@ export const data = [
   },
   {
     id: 5,
-    name: 'Cameron Williamson',
+    fullName: 'Cameron Williamson',
     endDate: '7/27/13',
     profits: '$782.01',
     losses: '$710.68',
@@ -41,7 +41,7 @@ export const data = [
   },
   {
     id: 6,
-    name: 'Kristin Watson',
+    fullName: 'Kristin Watson',
     endDate: '5/19/12',
     profits: '$767.50',
     losses: '$779.58',
@@ -49,7 +49,7 @@ export const data = [
   },
   {
     id: 7,
-    name: 'Eleanor Pena',
+    fullName: 'Eleanor Pena',
     endDate: '8/21/15',
     profits: '$475.22',
     losses: '$219.78',
@@ -57,7 +57,7 @@ export const data = [
   },
   {
     id: 8,
-    name: 'Guy Hawkins',
+    fullName: 'Guy Hawkins',
     endDate: '5/27/15',
     profits: '$576.28',
     losses: '$446.61',
@@ -65,7 +65,7 @@ export const data = [
   },
   {
     id: 9,
-    name: 'Brooklyn Simmons',
+    fullName: 'Brooklyn Simmons',
     endDate: '3/4/16',
     profits: '$219.78',
     losses: '$928.41',
@@ -73,7 +73,7 @@ export const data = [
   },
   {
     id: 10,
-    name: 'Robert Fox',
+    fullName: 'Robert Fox',
     endDate: '4/4/18',
     profits: '$202.87',
     losses: '$275.43',
@@ -81,7 +81,7 @@ export const data = [
   },
   {
     id: 11,
-    name: 'Noah Connolly',
+    fullName: 'Noah Connolly',
     endDate: '5/11/22',
     profits: '$252.00',
     losses: '$12.17',
@@ -89,7 +89,7 @@ export const data = [
   },
   {
     id: 12,
-    name: 'Lucy Farrell',
+    fullName: 'Lucy Farrell',
     endDate: '5/10/21',
     profits: '$1002.30',
     losses: '$28.50',
@@ -97,7 +97,7 @@ export const data = [
   },
   {
     id: 13,
-    name: 'Emma Fitzgerald',
+    fullName: 'Emma Fitzgerald',
     endDate: '5/11/22',
     profits: '$902.30',
     losses: '$22.70',
@@ -105,7 +105,7 @@ export const data = [
   },
   {
     id: 14,
-    name: 'Conor Healy',
+    fullName: 'Conor Healy',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -113,7 +113,7 @@ export const data = [
   },
   {
     id: 15,
-    name: 'Lily Dunne',
+    fullName: 'Lily Dunne',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -121,7 +121,7 @@ export const data = [
   },
   {
     id: 16,
-    name: 'Cillian Clarke',
+    fullName: 'Cillian Clarke',
     endDate: '1/9/21',
     profits: '',
     losses: '',
@@ -129,7 +129,7 @@ export const data = [
   },
   {
     id: 17,
-    name: 'Olivia Carroll',
+    fullName: 'Olivia Carroll',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -137,7 +137,7 @@ export const data = [
   },
   {
     id: 18,
-    name: 'Jamie Gallagher',
+    fullName: 'Jamie Gallagher',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -145,7 +145,7 @@ export const data = [
   },
   {
     id: 19,
-    name: 'Chloe Murphy',
+    fullName: 'Chloe Murphy',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -153,7 +153,7 @@ export const data = [
   },
   {
     id: 20,
-    name: 'Darragh Daly',
+    fullName: 'Darragh Daly',
     endDate: '7/6/23',
     profits: '',
     losses: '',
@@ -161,7 +161,7 @@ export const data = [
   },
   {
     id: 21,
-    name: 'Aoife Connell',
+    fullName: 'Aoife Connell',
     endDate: '5/10/22',
     profits: '',
     losses: '',
@@ -169,7 +169,7 @@ export const data = [
   },
   {
     id: 22,
-    name: 'Caoimhe Flynn',
+    fullName: 'Caoimhe Flynn',
     endDate: '5/11/21',
     profits: '',
     losses: '',
@@ -177,7 +177,7 @@ export const data = [
   },
   {
     id: 23,
-    name: 'Luke Collins',
+    fullName: 'Luke Collins',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -185,7 +185,7 @@ export const data = [
   },
   {
     id: 24,
-    name: 'Molly Kennedy',
+    fullName: 'Molly Kennedy',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -193,7 +193,7 @@ export const data = [
   },
   {
     id: 25,
-    name: 'Charlie Connor',
+    fullName: 'Charlie Connor',
     endDate: '5/11/21',
     profits: '',
     losses: '',
@@ -201,7 +201,7 @@ export const data = [
   },
   {
     id: 26,
-    name: 'Harry Johnston',
+    fullName: 'Harry Johnston',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -209,7 +209,7 @@ export const data = [
   },
   {
     id: 27,
-    name: 'Oisín Callaghan',
+    fullName: 'Oisín Callaghan',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -217,7 +217,7 @@ export const data = [
   },
   {
     id: 28,
-    name: 'Anna Byrne',
+    fullName: 'Anna Byrne',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -225,7 +225,7 @@ export const data = [
   },
   {
     id: 29,
-    name: 'James Mahony',
+    fullName: 'James Mahony',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -233,7 +233,7 @@ export const data = [
   },
   {
     id: 30,
-    name: 'Daniel Maguire',
+    fullName: 'Daniel Maguire',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -241,7 +241,7 @@ export const data = [
   },
   {
     id: 31,
-    name: 'Sophia Hughes',
+    fullName: 'Sophia Hughes',
     endDate: '5/11/22',
     profits: '',
     losses: '',
@@ -249,7 +249,7 @@ export const data = [
   },
   // {
   //   id: 32,
-  //   name: 'Patrick MacCarthy',
+  //   fullName: 'Patrick MacCarthy',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -257,7 +257,7 @@ export const data = [
   // },
   // {
   //   id: 33,
-  //   name: 'Adam Campbell',
+  //   fullName: 'Adam Campbell',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -265,7 +265,7 @@ export const data = [
   // },
   // {
   //   id: 34,
-  //   name: 'Michael Murray',
+  //   fullName: 'Michael Murray',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -273,7 +273,7 @@ export const data = [
   // },
   // {
   //   id: 35,
-  //   name: 'Freya Boyle',
+  //   fullName: 'Freya Boyle',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -281,7 +281,7 @@ export const data = [
   // },
   // {
   //   id: 36,
-  //   name: 'Alex Lynch',
+  //   fullName: 'Alex Lynch',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -289,7 +289,7 @@ export const data = [
   // },
   // {
   //   id: 37,
-  //   name: 'Fionn Thompson',
+  //   fullName: 'Fionn Thompson',
   //   endDate: '16/01/24',
   //   profits: '',
   //   losses: '',
@@ -297,7 +297,7 @@ export const data = [
   // },
   // {
   //   id: 38,
-  //   name: 'Saoirse Walsh',
+  //   fullName: 'Saoirse Walsh',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -305,7 +305,7 @@ export const data = [
   // },
   // {
   //   id: 39,
-  //   name: 'Liam Reilly',
+  //   fullName: 'Liam Reilly',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -313,7 +313,7 @@ export const data = [
   // },
   // {
   //   id: 40,
-  //   name: 'Tadhg Duffy',
+  //   fullName: 'Tadhg Duffy',
   //   endDate: '2/12/23',
   //   profits: '',
   //   losses: '',
@@ -321,7 +321,7 @@ export const data = [
   // },
   // {
   //   id: 41,
-  //   name: 'Kate Brown',
+  //   fullName: 'Kate Brown',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
@@ -329,7 +329,7 @@ export const data = [
   // },
   // {
   //   id: 42,
-  //   name: 'Jack Brennan',
+  //   fullName: 'Jack Brennan',
   //   endDate: '5/11/22',
   //   profits: '',
   //   losses: '',
