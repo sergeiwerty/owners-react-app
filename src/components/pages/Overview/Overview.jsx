@@ -8,23 +8,20 @@ import arrow_btn from './images/arrow_btn.svg'
 //
 import { useGlobalContext } from '../../context'
 
-// const getLocalStorage = () => {
-//   let listOfOwners = localStorage.getItem('listOfOwners')
-//   if (listOfOwners) {
-//     return JSON.parse(localStorage.getItem('listOfOwners'))
-//   } else {
-//     return []
-//   }
-// }
-
 const Overview = () => {
-  const { openModal, listOfOwners, allOwners, mergeOwners } = useGlobalContext()
+  const {
+    openModal,
+    listOfOwners,
+    allOwners,
+    mergeOwners,
+    handlePageAfterAdd,
+  } = useGlobalContext()
 
-  //перенести
   const [modalShow, setModalShow] = useState(false)
 
   useEffect(() => {
     mergeOwners(allOwners, listOfOwners)
+    handlePageAfterAdd()
     localStorage.setItem('listOfOwners', JSON.stringify(listOfOwners))
   }, [listOfOwners])
   return (
@@ -39,11 +36,7 @@ const Overview = () => {
             >
               ...
             </button>
-            <button
-              className={styles.add_btn}
-              // onClick={() => setModalShow(!modalShow)}
-              onClick={openModal}
-            >
+            <button className={styles.add_btn} onClick={openModal}>
               Add
             </button>
           </div>
@@ -59,7 +52,7 @@ const Overview = () => {
       </p>
       <List />
       {/* <NewOwners /> */}
-      {/* <OwnersForm show={modalShow} /> */}
+
       <Modal />
     </>
   )
@@ -73,14 +66,6 @@ const List = () => {
     allOwners,
     ownersTrigger,
   } = useGlobalContext()
-
-  // перенёс в contex
-  // const [page, setPage] = useState(0)
-  // const [owners, setOwners] = useState([])
-
-  // useEffect(() => {
-  //   setOwners(paginate(owners)[page])
-  // }, [])
 
   return (
     <>
@@ -114,6 +99,7 @@ const Pagination = () => {
       if (nextPage > paginate(allOwners).length - 1) {
         nextPage = 0
       }
+      console.log(nextPage)
       return nextPage
     })
   }
@@ -124,6 +110,7 @@ const Pagination = () => {
       if (prevPage < 0) {
         prevPage = paginate(allOwners).length - 1
       }
+      console.log(prevPage)
       return prevPage
     })
   }
@@ -136,9 +123,7 @@ const Pagination = () => {
           {handlePage}
         </button>
         {paginate(allOwners).map((item, index) => {
-          // console.log(index)
           if (index === 0) {
-            // console.log('bang!')
             return (
               <button
                 key={index}
