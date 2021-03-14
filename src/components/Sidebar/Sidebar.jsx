@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom'
 // import styles from './Sidebar.module.css'
 import { sidebarItems } from './sidebarData'
 import './sidebar.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+import Col from 'react-bootstrap/Col'
 import logo from './logo.svg'
 
 const Sidebar = () => {
   return (
-    <aside className='col-12, col-sm-12, main_menu'>
+    <aside
+      className='main_menu col-12 col-sm-12 col-md-2 position-fixed'
+      id='sticky-sidebar'
+    >
       <div className='aside_top'>
         <div className='logo_container'>
           <a href='index'>
@@ -33,7 +37,7 @@ const Sidebar = () => {
               p_name,
             } = item
             return (
-              <li>
+              <li className='item'>
                 <Link
                   key={id}
                   to={to}

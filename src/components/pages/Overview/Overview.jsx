@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Modal } from '../../ModalForm'
-import NewOwners from './NewOwners'
+// import NewOwners from './NewOwners'
 import { paginate } from './utils'
-import styles from './Overview.module.css'
+// import styles from './Overview.module.css'
+import '../../bootstrap.min.css'
 import './overview.css'
+
 import arrow_btn from './images/arrow_btn.svg'
 //
 import { useGlobalContext } from '../../context'
+//
 
 const Overview = () => {
   const {
@@ -26,24 +29,25 @@ const Overview = () => {
   }, [listOfOwners])
   return (
     <>
-      <div className={styles.owners_heading}>
+      <div className='owners_heading'>
+        <h1>Overview</h1>
         {!modalShow && (
-          <div className={styles.button_wrapper}>
+          <div className='button_wrapper'>
             <button
-              className={styles.some_btn}
+              className='some_btn'
               type='submit'
               title='functionality is not yet available'
             >
               ...
             </button>
-            <button className={styles.add_btn} onClick={openModal}>
+            <button className='add_btn' onClick={openModal}>
               Add
             </button>
           </div>
         )}
       </div>
 
-      <p className={styles.lines_heading}>
+      <p className='lines_heading'>
         <span>Owner</span>
         <span>End date</span>
         <span>Profits</span>
@@ -74,11 +78,11 @@ const List = () => {
         return (
           <>
             <article key={id} className='owner'>
-              <div className={styles.owner_line}>
+              <div className='owner_line'>
                 <h3>{fullName}</h3>
                 <span>{endDate}</span>
-                <span className={styles.profits}>{profits}</span>
-                <span className={styles.losses}>{losses}</span>
+                <span className='profits'>{profits}</span>
+                <span className='losses'>{losses}</span>
                 <span>{phone}</span>
               </div>
             </article>

@@ -11,6 +11,7 @@
 
 #root {
   max-width: 1440px;
+  height: 100%;
   margin: 0 auto;
 
   font-family: lato, sans-serif;
@@ -22,7 +23,13 @@ code {
     monospace;
 }
 
+div.container-fluid {
+  height: inherit;
+  padding: 0;
+}
+
 main {
+  height: inherit;
   margin: 0 auto;
   /* display: grid;
   grid-template-rows: 946px;

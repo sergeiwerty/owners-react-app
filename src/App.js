@@ -3,10 +3,12 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // import { owners } from './ownersData'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 // layout
 import { Layout } from './components/Layout'
+// import Row from 'react-bootstrap/Row'
+// import Col from 'react-bootstrap/Col'
 
 // pages
 import Overview from './components/pages/Overview/Overview'
@@ -25,42 +27,44 @@ function App() {
   // const [owners, setOwner] = useState(data)
   return (
     <Layout>
-      <Router>
-        <main className='row main-container'>
-          <Sidebar />
-          <section className='navigation, col-12, col-sm-8, col-lg-9'>
-            <Switch>
-              <Route exact path={['/', '/owners-react-app']}>
-                <Overview />
-              </Route>
-              <Route path='/cloud'>
-                <Cloud />
-              </Route>
-              <Route path='/sketch'>
-                <Sketch />
-              </Route>
-              <Route path='/experiments'>
-                <Experiments />
-              </Route>
-              <Route path='/security'>
-                <Security />
-              </Route>
-              <Route path='/ownership'>
-                <Ownership />
-              </Route>
-              <Route path='/ab_test'>
-                <ABtest />
-              </Route>
-              <Route path='/colors'>
-                <Colors />
-              </Route>
-              <Route path='*'>
-                <Error />
-              </Route>
-            </Switch>
-          </section>
-        </main>
-      </Router>
+      <div className='container-fluid'>
+        <Router>
+          <main className='main-container'>
+            <Sidebar />
+            <section className='navigation col-10 col-lg-12' id='main'>
+              <Switch>
+                <Route exact path={['/', '/owners-react-app']}>
+                  <Overview />
+                </Route>
+                <Route path='/cloud'>
+                  <Cloud />
+                </Route>
+                <Route path='/sketch'>
+                  <Sketch />
+                </Route>
+                <Route path='/experiments'>
+                  <Experiments />
+                </Route>
+                <Route path='/security'>
+                  <Security />
+                </Route>
+                <Route path='/ownership'>
+                  <Ownership />
+                </Route>
+                <Route path='/ab_test'>
+                  <ABtest />
+                </Route>
+                <Route path='/colors'>
+                  <Colors />
+                </Route>
+                <Route path='*'>
+                  <Error />
+                </Route>
+              </Switch>
+            </section>
+          </main>
+        </Router>
+      </div>
     </Layout>
   )
 }
