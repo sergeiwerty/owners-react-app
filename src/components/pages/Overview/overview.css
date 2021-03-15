@@ -66,6 +66,14 @@
   color: var(--ln-headings);
 }
 
+.owner_line span {
+  font-size: 14px;
+}
+
+.lines_heading span:first-child {
+  padding-left: 27px;
+}
+
 .profits {
   color: var(--green-color-content);
 }
@@ -101,65 +109,6 @@ label span {
 input {
   padding-left: 1em;
   margin-left: auto;
-}
-
-@media (max-width: 768px) {
-  .main-container {
-    flex-direction: column;
-  }
-
-  .lines_heading {
-    font-size: 1.7em;
-  }
-
-  .owners_heading {
-    display: grid;
-    grid-template-rows: repeat(6, auto);
-    grid-template-columns: repeat(1, auto);
-  }
-
-  .owners_heading:first-child {
-    padding-left: 27px;
-  }
-
-  .add_form {
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(1, 100%);
-  }
-
-  .iputs_wrapper label {
-    padding: 1.2em 1.1em;
-  }
-
-  .iputs_wrapper span {
-    display: inline-block;
-    margin: auto 0;
-    font-size: 1.5em;
-  }
-
-  input {
-    width: 80%;
-    height: 2em;
-    border: 2px solid #9dadb9;
-    font-size: 1.5em;
-  }
-
-  .button_wrapper {
-    grid-column: 1;
-    margin: 0;
-  }
-
-  .form_buttons_wrapper button {
-    font-size: 2em;
-    padding: 0;
-  }
-
-  .add_btn,
-  .some_btn {
-    font-size: 1.5em;
-    width: 140px;
-    height: 72px;
-  }
 }
 
 .pagination-container {
@@ -251,8 +200,89 @@ section.navigation {
   margin-bottom: 0;
   padding-top: 7px;
   padding-left: 27px;
+
   font-size: 14px;
 }
-/* 
-    padding-top: 27px;
-    padding-left: 27px; */
+
+@media (max-width: 1200px) {
+  .owner_line {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  section.navigation {
+    padding-top: 35px;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .lines_heading {
+    font-size: 1.2em;
+  }
+
+  .owners_heading {
+    align-items: baseline;
+    margin-bottom: 35px;
+    /* display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(1, auto); */
+  }
+
+  .owner_line {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  }
+
+  .owners_heading:first-child {
+    padding-left: 27px;
+  }
+
+  .owner h3 {
+    padding-left: 0.5em;
+  }
+
+  .add_form {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  .iputs_wrapper label {
+    padding: 1.2em 1.1em;
+  }
+
+  .iputs_wrapper span {
+    display: inline-block;
+    margin: auto 0;
+    font-size: 1.5em;
+  }
+
+  input {
+    width: 80%;
+    height: 2em;
+    border: 2px solid #9dadb9;
+    font-size: 1.5em;
+  }
+
+  .button_wrapper {
+    grid-column: 1;
+    margin: 0;
+  }
+
+  .form_buttons_wrapper button {
+    font-size: 2em;
+    padding: 0;
+  }
+
+  .add_btn,
+  .some_btn {
+    font-size: 1.1em;
+    /* width: 140px;
+    height: 72px; */
+  }
+}

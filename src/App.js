@@ -31,7 +31,10 @@ function App() {
         <Router>
           <main className='main-container'>
             <Sidebar />
-            <section className='navigation col-10 col-lg-12' id='main'>
+            <section
+              className='navigation col-12 col-md-12 col-lg-12'
+              id='main'
+            >
               <Switch>
                 <Route exact path={['/', '/owners-react-app']}>
                   <Overview />

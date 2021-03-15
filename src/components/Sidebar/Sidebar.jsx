@@ -10,7 +10,7 @@ import logo from './logo.svg'
 const Sidebar = () => {
   return (
     <aside
-      className='main_menu col-12 col-sm-12 col-md-2 position-fixed'
+      className='main_menu col-12 col-sm-8 col-md-2 position-fixed'
       id='sticky-sidebar'
     >
       <div className='aside_top'>
