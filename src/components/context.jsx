@@ -19,6 +19,7 @@ const AppProvider = ({ children }) => {
   const [ownersTrigger, setOwnersTrigger] = useState(false)
   //
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   //
   // all person data
   const [owner, setOwner] = useState({
@@ -40,6 +41,14 @@ const AppProvider = ({ children }) => {
 
   const closeModal = () => {
     setIsModalOpen(false)
+  }
+
+  const openMobile = () => {
+    setIsMobile(true)
+  }
+
+  const closeMobile = () => {
+    setIsMobile(false)
   }
 
   const mergeOwners = (owners, listOfOwners) => {
@@ -87,6 +96,10 @@ const AppProvider = ({ children }) => {
         isModalOpen,
         openModal,
         closeModal,
+        //
+        isMobile,
+        openMobile,
+        closeMobile,
         //
         listOfOwners,
         handleChange,

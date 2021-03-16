@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 // import styles from './Sidebar.module.css'
+import { useGlobalContext } from '../context'
 import { sidebarItems } from './sidebarData'
 import './sidebar.css'
 // import 'bootstrap/dist/css/bootstrap.min.css'
@@ -10,6 +11,7 @@ import close_menu_btn from './close_menu_btn.png'
 import open_menu_btn from './open_menu_btn.png'
 
 const Sidebar = () => {
+  const { isMobile, openMobile, closeMobile } = useGlobalContext()
   return (
     <aside
       className='main_menu col-12 col-sm-8 col-md-2 position-fixed'
@@ -21,17 +23,21 @@ const Sidebar = () => {
             <img src={logo} alt='logo' />
           </a>
           <hr></hr>
-          <button className='close_btn'>
-            <img src={close_menu_btn} alt='close menu' />
+          <button
+            className={`${isMobile ? 'close_mob_btn toggle' : 'close_mob_btn'}`}
+          >
+            <img src={close_menu_btn} alt='close menu' onClick={closeMobile} />
           </button>
           <button
-            className='open_btn
-          '
-          >
-            <img src={open_menu_btn} alt='open menu' />
-          </button>
+            className={`${isMobile ? 'open_mob_btn toggle' : 'open_mob_btn'}`}
+            onClick={openMobile}
+          ></button>
         </div>
-        <ul className='items_list'>
+        <ul
+          className={`${
+            isMobile ? 'items_list mobile_open' : 'items_list mobile_close'
+          }`}
+        >
           {sidebarItems.map((item) => {
             const {
               id,
