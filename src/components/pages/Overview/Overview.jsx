@@ -81,8 +81,8 @@ const List = () => {
               <div className='owner_line'>
                 <h3>{fullName}</h3>
                 <span>{endDate}</span>
-                <span className='profits'>{profits}</span>
-                <span className='losses'>{losses}</span>
+                <span className='profits'>{`$${profits}`}</span>
+                <span className='losses'>{`$${losses}`}</span>
                 <span>{phone}</span>
               </div>
             </article>

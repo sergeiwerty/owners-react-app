@@ -6,6 +6,8 @@ import './sidebar.css'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import Col from 'react-bootstrap/Col'
 import logo from './logo.svg'
+import close_menu_btn from './close_menu_btn.png'
+import open_menu_btn from './open_menu_btn.png'
 
 const Sidebar = () => {
   return (
@@ -19,6 +21,15 @@ const Sidebar = () => {
             <img src={logo} alt='logo' />
           </a>
           <hr></hr>
+          <button className='close_btn'>
+            <img src={close_menu_btn} alt='close menu' />
+          </button>
+          <button
+            className='open_btn
+          '
+          >
+            <img src={open_menu_btn} alt='open menu' />
+          </button>
         </div>
         <ul className='items_list'>
           {sidebarItems.map((item) => {
