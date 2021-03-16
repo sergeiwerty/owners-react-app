@@ -1,4 +1,5 @@
 [![Sergey's GitHub stats](https://github-readme-stats.vercel.app/api?username=sergeiwerty)](https://github.com/sergeiwerty/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sergeiwerty)](https://github.com/sergeiwerty/github-readme-stats)
 
 <!-- # Getting Started with Create React App
 
