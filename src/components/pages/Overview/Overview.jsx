@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Modal } from '../../ModalForm'
-// import NewOwners from './NewOwners'
 import { paginate } from './utils'
-// import styles from './Overview.module.css'
 import '../../bootstrap.min.css'
 import './overview.css'
-
 import arrow_btn from './images/arrow_btn.svg'
-//
+
 import { useGlobalContext } from '../../context'
-//
 
 const Overview = () => {
   const {
@@ -55,21 +51,13 @@ const Overview = () => {
         <span>Phone</span>
       </p>
       <List />
-      {/* <NewOwners /> */}
-
       <Modal />
     </>
   )
 }
 
 const List = () => {
-  const {
-    page,
-    handlePage,
-    owners,
-    allOwners,
-    ownersTrigger,
-  } = useGlobalContext()
+  const { page, owners, allOwners, ownersTrigger } = useGlobalContext()
 
   return (
     <>
@@ -95,7 +83,7 @@ const List = () => {
 }
 
 const Pagination = () => {
-  const { currentPage, page, handlePage, allOwners } = useGlobalContext()
+  const { page, handlePage, allOwners } = useGlobalContext()
 
   const nextPage = () => {
     handlePage((oldPage) => {

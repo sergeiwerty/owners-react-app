@@ -3,7 +3,6 @@ html {
 }
 
 body {
-  /* height: 100vh; */
   height: 100%;
 }
 
@@ -49,8 +48,4 @@ body {
 .main-container {
   display: flex;
   width: 100%;
-  /*    */
-  /* padding-left: 333px; */
-  /* max-height: 90vh; */
-  /* overflow: hidden; */
 }

@@ -9,11 +9,6 @@
   --white-text: #ffffff;
 }
 
-html {
-  /* width: 100%;
-  display: flex; */
-}
-
 #root {
   max-width: 1440px;
   height: 100%;
@@ -36,35 +31,7 @@ div.container-fluid {
 main {
   height: inherit;
   margin: 0 auto;
-  /* display: grid;
-  grid-template-rows: 946px;
-
-  width: 1440px;
-
-  overflow: hidden; */
 }
-
-/* .container {
-  grid-column-start: 2;
-  padding: 0 52px 0 75px;
-} */
-
-/* @media (max-width: 768px) {
-  body {
-    margin: 0;
-  }
-
-  main {
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content;
-    max-width: 100%;
-  }
-  .container {
-    grid-column-start: 1;
-    padding: 0 40px 0 40px;
-    font-size: 1.2em;
-  }
-} */
 
 .owner:nth-child(odd) {
   background-color: var(--odd-line-bacground);

@@ -1,14 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import styles from './Sidebar.module.css'
 import { useGlobalContext } from '../context'
 import { sidebarItems } from './sidebarData'
 import './sidebar.css'
-// import 'bootstrap/dist/css/bootstrap.min.css'
-import Col from 'react-bootstrap/Col'
 import logo from './logo.svg'
 import close_menu_btn from './close_menu_btn.png'
-import open_menu_btn from './open_menu_btn.png'
 
 const Sidebar = () => {
   const { isMobile, openMobile, closeMobile } = useGlobalContext()
@@ -43,10 +39,8 @@ const Sidebar = () => {
               id,
               to,
               textDecoration,
-              // className,
               width,
               height,
-              // svg_fill,
               xmlns,
               opacity,
               d,

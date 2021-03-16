@@ -167,27 +167,9 @@ input {
 }
 
 .pagination-container {
-  /* display: flex;
-  justify-content: center;
-  margin-top: auto;
-*/
-  /* position: absolute;
-  width: 194px;
-  left: 50%;
-  bottom: -30px;
-  margin-left: -90px;
-  margin-bottom: 45px; */
   margin-top: auto;
   align-self: center;
 }
-
-/* height: 100px;
-  width: 100px;
-  position: absolute;
-  left: 50%;
-  margin-left: -50px;
-  top: 50%;
-  margin-top: -50px; */
 
 section.navigation {
   display: flex;
@@ -200,7 +182,6 @@ section.navigation {
   align-items: center;
   height: 66px;
   margin-bottom: 0;
-  /* padding-top: 7px; */
   padding-left: 27px;
 
   font-size: 14px;
@@ -237,9 +218,6 @@ section.navigation {
   .owners_heading {
     align-items: baseline;
     margin-bottom: 35px;
-    /* display: grid;
-    grid-template-rows: repeat(6, auto);
-    grid-template-columns: repeat(1, auto); */
   }
 
   .owner_line {
@@ -289,8 +267,6 @@ section.navigation {
   .add_btn,
   .some_btn {
     font-size: 1.1em;
-    /* width: 140px;
-    height: 72px; */
   }
 }
 

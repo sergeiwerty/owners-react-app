@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
   //
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  //
+
   // all person data
   const [owner, setOwner] = useState({
     fullName: '',
