@@ -70,8 +70,10 @@ const Sidebar = () => {
           })}
         </ul>
       </div>
-
-      <a href='ss' className='logout_item'>
+      <a
+        href='ss'
+        className={`${isMobile ? 'logout_item toggle' : 'logout_item'}`}
+      >
         <svg
           width='23'
           height='24'

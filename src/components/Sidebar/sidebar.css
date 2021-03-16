@@ -102,8 +102,8 @@ hr {
     padding-right: 0.5em;
   }
 
-  .logo_container {
-    display: none;
+  .logo_container hr {
+    width: 80px;
   }
 
   .aside-top {
@@ -178,8 +178,8 @@ hr {
   align-self: center;
   padding: 0;
   border: 0;
-  width: 50px;
-  height: 24px;
+  width: 35px;
+  height: 18px;
   color: #fff;
   background-color: transparent;
 }
@@ -197,8 +197,8 @@ hr {
 
   right: 0;
   transform: none;
-  width: 50px;
-  height: 4px;
+  width: 35px;
+  height: 2px;
   background-color: currentColor;
   box-shadow: 0 10px 0 0 currentColor, 0 20px 0 0 currentColor;
 }
@@ -238,6 +238,10 @@ hr {
   .close_mob_btn.toggle {
     display: block;
     height: 23px;
+  }
+
+  .logout_item {
+    display: none;
   }
 
   .main_menu {
@@ -323,8 +327,23 @@ hr {
     margin-right: 10px;
   }
 
-  .logout_item {
+  .logout_item.toggle {
+    display: flex;
+    align-self: flex-end;
+    width: 37px;
+    margin: 0;
+    /* margin-top: -55px; */
+    align-self: flex-end;
+    margin-top: -60px;
+    z-index: 1;
+    margin-right: 55px;
+  }
+
+  .logout_item p {
     display: none;
-    margin-top: 0;
+  }
+
+  .logout_item svg {
+    transform: scale(1.3);
   }
 }

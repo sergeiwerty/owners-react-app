@@ -171,12 +171,14 @@ input {
   justify-content: center;
   margin-top: auto;
 */
-  position: absolute;
+  /* position: absolute;
   width: 194px;
   left: 50%;
-  bottom: 0;
-  margin-left: -82px;
-  margin-bottom: 45px;
+  bottom: -30px;
+  margin-left: -90px;
+  margin-bottom: 45px; */
+  margin-top: auto;
+  align-self: center;
 }
 
 /* height: 100px;

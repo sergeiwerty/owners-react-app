@@ -245,15 +245,7 @@ export const Modal = () => {
     // fullName,
     // addFullName,
     addOwner,
-    // addEndDate,
-    // endDate,
-    // profits,
-    // losses,
-    // phone,
-    // addProfits,
-    // addLosses,
-    // addPhone,
-    //
+
     switchTrigger,
     handlePageAfterAdd,
   } = useGlobalContext()
