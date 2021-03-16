@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/owners-react-app/static/css/main.13fdf956.chunk.css",
-    "main.js": "/owners-react-app/static/js/main.2af2e8a0.chunk.js",
-    "main.js.map": "/owners-react-app/static/js/main.2af2e8a0.chunk.js.map",
-    "runtime-main.js": "/owners-react-app/static/js/runtime-main.ad31974f.js",
-    "runtime-main.js.map": "/owners-react-app/static/js/runtime-main.ad31974f.js.map",
-    "static/js/2.f1896ba8.chunk.js": "/owners-react-app/static/js/2.f1896ba8.chunk.js",
-    "static/js/2.f1896ba8.chunk.js.map": "/owners-react-app/static/js/2.f1896ba8.chunk.js.map",
-    "static/js/3.0fb1164d.chunk.js": "/owners-react-app/static/js/3.0fb1164d.chunk.js",
-    "static/js/3.0fb1164d.chunk.js.map": "/owners-react-app/static/js/3.0fb1164d.chunk.js.map",
+    "main.css": "/owners-react-app/static/css/main.c9d7a2c6.chunk.css",
+    "main.js": "/owners-react-app/static/js/main.43642701.chunk.js",
+    "main.js.map": "/owners-react-app/static/js/main.43642701.chunk.js.map",
+    "runtime-main.js": "/owners-react-app/static/js/runtime-main.f153c200.js",
+    "runtime-main.js.map": "/owners-react-app/static/js/runtime-main.f153c200.js.map",
+    "static/js/2.8951d679.chunk.js": "/owners-react-app/static/js/2.8951d679.chunk.js",
+    "static/js/2.8951d679.chunk.js.map": "/owners-react-app/static/js/2.8951d679.chunk.js.map",
+    "static/js/3.3207e0f4.chunk.js": "/owners-react-app/static/js/3.3207e0f4.chunk.js",
+    "static/js/3.3207e0f4.chunk.js.map": "/owners-react-app/static/js/3.3207e0f4.chunk.js.map",
     "index.html": "/owners-react-app/index.html",
-    "static/css/main.13fdf956.chunk.css.map": "/owners-react-app/static/css/main.13fdf956.chunk.css.map",
-    "static/js/2.f1896ba8.chunk.js.LICENSE.txt": "/owners-react-app/static/js/2.f1896ba8.chunk.js.LICENSE.txt",
+    "static/css/main.c9d7a2c6.chunk.css.map": "/owners-react-app/static/css/main.c9d7a2c6.chunk.css.map",
+    "static/js/2.8951d679.chunk.js.LICENSE.txt": "/owners-react-app/static/js/2.8951d679.chunk.js.LICENSE.txt",
+    "static/media/arrow_btn.0a11ad12.svg": "/owners-react-app/static/media/arrow_btn.0a11ad12.svg",
     "static/media/logo.c304b31b.svg": "/owners-react-app/static/media/logo.c304b31b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ad31974f.js",
-    "static/js/2.f1896ba8.chunk.js",
-    "static/css/main.13fdf956.chunk.css",
-    "static/js/main.2af2e8a0.chunk.js"
+    "static/js/runtime-main.f153c200.js",
+    "static/js/2.8951d679.chunk.js",
+    "static/css/main.c9d7a2c6.chunk.css",
+    "static/js/main.43642701.chunk.js"
   ]
 }
