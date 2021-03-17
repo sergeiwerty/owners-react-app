@@ -4,7 +4,7 @@
 
 ## Description
 
-This is a demo dashboard application with base functionality supporting adding of the new owners.
+This is a demo dashboard application with basic functionality supporting adding of the new owners.
 
 The objective of this project is to create a single page application with the ability to display the data from list of owners (from local state) and new owners (added to local storage).
 
@@ -14,9 +14,9 @@ During the process of designing layout for this app Desktop First approach was c
 
 Application adapts to the size of the screen no matter what the target device. Responsive uses CSS media queries to change styles based on the target device such as width and height.
 
-Adding a new owner is done by filling out a form in a modal window. Submiting is possible only after passing the validation of these fields. When entering invalid data, a message about the corresponding error is displayed. After adding to the list, users are displayed 10 per page, which can be navigated using pagination.
+Adding a new owner is done by filling out a form in a modal window. Submitting is possible only after passing the validation of these fields. When entering invalid data, a message about the corresponding error is displayed. After adding to the list, users are displayed 10 per page, which can be navigated using pagination.
 
-The main navigation is implemented as a sidebar. To demonstrate the work, only the Overview page is implemented. In mobile verseion of the menu implemented CSS-animations.
+The main navigation is implemented as a sidebar. To demonstrate the work, only the Overview page is implemented. In mobile version of the menu implemented CSS-animations.
 
 ## Development tools used
 
@@ -25,7 +25,7 @@ The main navigation is implemented as a sidebar. To demonstrate the work, only t
 - React Router package (for dynamic routing)
 - React-Bootstrap (components)
 - Bootstrap 4 (layouts, components, styles)
-- Formik library (menaging forms)
+- Formik library (managing forms)
 - Yup package (schema builder for form validation)
 
 As for React, functional components and React Hooks (useState, useEffect, useState, ) were been used
