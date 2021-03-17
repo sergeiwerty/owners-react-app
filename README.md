@@ -28,7 +28,7 @@ The main navigation is implemented as a sidebar. To demonstrate the work, only t
 - Formik library (managing forms)
 - Yup package (schema builder for form validation)
 
-As for React, functional components and React Hooks (useState, useEffect, useState, ) were been used
+As for React, functional components and React Hooks (useState, useEffect, useContext, ) were been used
 
 ## Design
 
