@@ -1,6 +1,6 @@
 # **React based application implementing dashboard**
 
-[View deployment](#3-https://sergeiwerty.github.io/owners-react-app/)
+### [View deployment](https://sergeiwerty.github.io/owners-react-app/)
 
 ## Description
 
@@ -30,7 +30,7 @@ The main navigation is implemented as a sidebar. To demonstrate the work, only t
 
 As for React, functional components and React Hooks (useState, useEffect, useState, ) were been used
 
-Dashboard UI Designed by [Pierluigi Giglio](https://dribbble.com/pierluigigiglio)
+Dashboard UI Designed by [**Pierluigi Giglio**](https://dribbble.com/pierluigigiglio)
 
 ## Available Scripts
 
@@ -44,7 +44,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-##Extra
+## Extra
 
 <p align="center">
          <a href="#">
