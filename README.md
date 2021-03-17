@@ -14,7 +14,7 @@ During the process of designing layout for this app Desktop First approach was c
 
 Application adapts to the size of the screen no matter what the target device. Responsive uses CSS media queries to change styles based on the target device such as width and height.
 
-Adding a new owner is done by filling out a form in a modal window. Submitting is possible only after passing the validation of these fields. When entering invalid data, a message about the corresponding error is displayed. After adding to the list, users are displayed 10 per page, which can be navigated using pagination.
+Adding a new owner is done by filling out a form in a modal window. Submitting is possible only after passing the validation of these fields. When entering invalid data, a message about the corresponding error is displayed. After adding to the list, owners are displayed 10 per page, which can be navigated using pagination.
 
 The main navigation is implemented as a sidebar. To demonstrate the work, only the Overview page is implemented. In mobile version of the menu implemented CSS-animations.
 
