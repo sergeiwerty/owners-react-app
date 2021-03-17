@@ -20,15 +20,17 @@ The main navigation is implemented as a sidebar. To demonstrate the work, only t
 
 ## Development tools used
 
-*React create app library (as integrated toolchain)
-*React DOM package (provides DOM-specific methods)
-*React Router package (for dynamic routing)
-*React-Bootstrap (components)
-*Bootstrap 4 (layouts, components, styles)
-*Formik library (menaging forms)
-\*Yup package (schema builder for form validation)
+- React create app library (as integrated toolchain)
+- React DOM package (provides DOM-specific methods)
+- React Router package (for dynamic routing)
+- React-Bootstrap (components)
+- Bootstrap 4 (layouts, components, styles)
+- Formik library (menaging forms)
+- Yup package (schema builder for form validation)
 
 As for React, functional components and React Hooks (useState, useEffect, useState, ) were been used
+
+## Design
 
 Dashboard UI Designed by [**Pierluigi Giglio**](https://dribbble.com/pierluigigiglio)
 
