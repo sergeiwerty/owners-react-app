@@ -1,8 +1,36 @@
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sergeiwerty)](https://github.com/sergeiwerty/github-readme-stats)
+# **React based application implementing dashboard**
 
-<!-- # Getting Started with Create React App
+###[View deployment](https://sergeiwerty.github.io/owners-react-app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+
+This is a demo dashboard application with base functionality supporting adding of the new owners.
+
+The objective of this project is to create a single page application with the ability to display the data from list of owners (from local state) and new owners (added to local storage).
+
+## Implementation features
+
+During the process of designing layout for this app Desktop First approach was chosen as responsive strategy.
+
+Application adapts to the size of the screen no matter what the target device. Responsive uses CSS media queries to change styles based on the target device such as width and height.
+
+Adding a new owner is done by filling out a form in a modal window. Submiting is possible only after passing the validation of these fields. When entering invalid data, a message about the corresponding error is displayed. After adding to the list, users are displayed 10 per page, which can be navigated using pagination.
+
+The main navigation is implemented as a sidebar. To demonstrate the work, only the Overview page is implemented. In mobile verseion of the menu implemented CSS-animations.
+
+## Development tools used
+
+*React create app library (as integrated toolchain)
+*React DOM package (provides DOM-specific methods)
+*React Router package (for dynamic routing)
+*React-Bootstrap (components)
+*Bootstrap 4 (layouts, components, styles)
+*Formik library (menaging forms)
+\*Yup package (schema builder for form validation)
+
+As for React, functional components and React Hooks (useState, useEffect, useState, ) were been used
+
+Dashboard UI Designed by [Pierluigi Giglio](https://dribbble.com/pierluigigiglio)
 
 ## Available Scripts
 
@@ -16,57 +44,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+##Extra
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+<p align="center">
+   <a href="#">
+    <img src="https://raw.githubusercontent.com/MikeCodesDotNET/ColoredBadges/4a38660afb7be89a6032218589b4454a1285c7f8/svg/dev/frameworks/react.svg" alt="react badge" style="vertical-align:top margin:6px 4px">
+  </a>  
+</p>
